@@ -6,15 +6,16 @@ namespace Module3.CLR
     {
         static void Main(string[] args)
         {
-            const string MyName = "Andrew";
+            string MyName = "Andrew";
+            byte age = 25;
+            bool pet = true;
+            double ShoeSize = 42;
 
-            Console.WriteLine(MyName);
-
-            Console.WriteLine("\t Привет, мир");
-            Console.WriteLine("\t Мне 25 лет");
-            Console.WriteLine("\t My name is \n Andrew");
-            Console.WriteLine('\u0040');
-            Console.WriteLine('\x23');
+            Console.WriteLine("My name is " + MyName);
+            Console.WriteLine("My age is " + age);
+            Console.WriteLine("Do I have a pet? " + pet);
+            Console.WriteLine("My shoe size is " + ShoeSize);
+          
 
             Console.ReadKey();
         }
