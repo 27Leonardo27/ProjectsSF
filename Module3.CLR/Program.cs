@@ -6,19 +6,27 @@ namespace Module3.CLR
     {
         static void Main(string[] args)
         {
-            string MyName = "Andrew";
-            byte age = 25;
-            bool pet = true;
-            double ShoeSize = 42;
 
-            Console.WriteLine("My name is " + MyName);
-            Console.WriteLine("My age is " + age);
-            Console.WriteLine("Do I have a pet? " + pet);
-            Console.WriteLine("My shoe size is " + ShoeSize);
-          
+            Console.Write("Enter your name: ");
+            var MyName = Console.ReadLine();
+
+            Console.Write("Enter your age: ");
+            var age = int.Parse(Console.ReadLine());
+
+            Console.WriteLine($"Your name is {MyName} and age is {age}");
+            Console.Write("Enter your birthday: ");
+
+            var birthday = Console.ReadLine();
+            Console.WriteLine($"Your birthday is {birthday}");
 
             Console.ReadKey();
         }
 
     }
+
 }
+
+
+
+
+
