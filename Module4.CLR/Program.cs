@@ -6,15 +6,25 @@ namespace Module4.CLR
     {
         static void Main(string[] args)
         {
-            int[,] array = { { 1, 2, 3 }, { 5, 6, 7 }, { 8, 9, 10 }, { 11, 12, 13} };
+            var arr = new int[] { 5, 6, 9, 1, 2, 3, 4, };
 
-            for (int i = 0; i < array.GetUpperBound(1) + 1; i++)
+            for (int a = 0; a < arr.Length; a++)
             {
-                for (int k = 0; k < array.GetUpperBound(0) + 1; k++)
+                for (int b = a + 1; b < arr.Length; b++)
                 {
-                    Console.Write(array[k, i] + " ");
+                    if (arr[a] > arr[b])
+                    {
+                        int c = arr[a];
+                        arr[a] = arr[b];
+                        arr[b] = c;
+                    }
                 }
-                Console.WriteLine();
+
+            }
+
+            foreach (var order in arr)
+            {
+                Console.Write(order);
             }
         }
     }
