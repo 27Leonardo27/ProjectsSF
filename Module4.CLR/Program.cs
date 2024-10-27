@@ -7,20 +7,22 @@ namespace Module4.CLR
     {
         static void Main(string[] args)
         {
-            int[] array = { -1, 2, 4, -8, 9, 10, -13, 11, 0, 8 };
+            (string Name, string Type, double Age, int NameCount) Pet;
 
-            int positive = 0;
+            Console.WriteLine("Введите имя питомца");
+            
+            Pet.Name = Console.ReadLine();
+            
+            Pet.NameCount = Pet.Name.Length;
 
-            for (int i = 0; i < array.Length; i++)
-            {
-                if (array[i] > 0)
-                { 
-                    positive++;
-                }
+            Console.WriteLine("Введите вид питомца");
+            
+            Pet.Type = Console.ReadLine();
 
-            }
-
-            Console.WriteLine(positive);
+            Console.WriteLine("Введите возраст питомца");
+            
+            Pet.Age = double.Parse(Console.ReadLine());
         }
     }
+    
 }
