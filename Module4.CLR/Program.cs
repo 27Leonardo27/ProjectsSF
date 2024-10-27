@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System.Globalization;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Module4.CLR
 {
@@ -6,19 +7,20 @@ namespace Module4.CLR
     {
         static void Main(string[] args)
         {
-            int[][] array = new int[3][];
+            int[] array = { -1, 2, 4, -8, 9, 10, -13, 11, 0, 8 };
 
-            array[0] = new int[2] { 1, 2 };
-            array[1] = new int[3] { 1, 2, 3 };
-            array[2] = new int[5] { 1, 2, 3, 4, 5 };
+            int positive = 0;
 
-            foreach (var num in array)
+            for (int i = 0; i < array.Length; i++)
             {
-                foreach (var item in num)
-                {
-                    Console.Write(item + " ");
+                if (array[i] > 0)
+                { 
+                    positive++;
                 }
+
             }
+
+            Console.WriteLine(positive);
         }
     }
 }
