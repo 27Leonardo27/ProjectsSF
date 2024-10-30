@@ -1,58 +1,94 @@
-﻿using System.ComponentModel.Design;
-using System.Globalization;
-using System.Security.Cryptography.X509Certificates;
-
-namespace Module4.CLR
+﻿namespace Module4.CLR
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static string ShowColor()
         {
-            (string Name, string LastName, string Login, int LoginLength, bool HasPet, string[] favcolors, double Age) User; //task 4.5.2
+            Console.WriteLine("Write u favorite color by small letter");
 
-            for (int k = 0; k < 3; k++)
+            var color = Console.ReadLine();
+
+            switch (color)
             {
-                Console.Write("Введите имя:");
+                case "red":
+                    {
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.ForegroundColor = ConsoleColor.Black;
 
-                User.Name = Console.ReadLine();
+                        Console.WriteLine("Your color is red!");
+                        break;
+                    }
+                case "green":
+                    {
+                        Console.BackgroundColor = ConsoleColor.Green;
+                        Console.ForegroundColor = ConsoleColor.Black;
 
-                Console.Write("Введите фамилию:");
+                        Console.WriteLine("Your color is green!");
+                        break;
+                    }
+                case "cyan":
+                    {
+                        Console.BackgroundColor = ConsoleColor.Cyan;
+                        Console.ForegroundColor = ConsoleColor.Black;
 
-                User.LastName = Console.ReadLine();
+                        Console.WriteLine("Your color is cyan!");
+                        break;
+                    }
+                default:
+                    {
+                        Console.BackgroundColor = ConsoleColor.Yellow;
+                        Console.ForegroundColor = ConsoleColor.Black;
 
-                Console.Write("Введите логин:");
-
-                User.Login = Console.ReadLine();
-
-                User.LoginLength = User.Login.Length; //task 4.5.3
-
-                Console.WriteLine("Есть ли у вас животные? Да или Нет");
-
-                var ansPet = Console.ReadLine();
-
-                if (ansPet == "Да") //task 4.5.4
-                {
-                    User.HasPet = true;
-                }
-                else
-                {
-                    User.HasPet = false;
-                }
-
-                Console.WriteLine("Введите возраст пользователя"); //task 4.5.5
-
-                User.Age = double.Parse(Console.ReadLine());
-
-                User.favcolors = new string[3];
-
-                Console.WriteLine("Введите три любимых цвета пользователя");
-
-                for (int i = 0; i < User.favcolors.Length; i++)
-                {
-                    User.favcolors[i] = Console.ReadLine();
-                }
+                        Console.WriteLine("Your color is yellow!");
+                        break;
+                    }
             }
+
+            return color;
+
         }
-    }
-    
+
+        static int[] GetArrayFromConsole()
+        {
+            var result = new int[5];
+
+            for (int i = 0; i < result.Length; i++)
+            {
+                Console.WriteLine("Введите элемент массива номер {0}", i + 1);
+                result[i] = int.Parse(Console.ReadLine());
+            }
+
+            Array.Sort(result);
+
+            foreach (var i in result)
+            {
+                Console.WriteLine(i);
+            }
+
+            return result;
+        }
+
+        public static void Main(string[] args)
+        {
+            GetArrayFromConsole();           
+
+            var favcolors = new string[3];
+
+
+            for (int i = 0; i < favcolors.Length; i++)
+            {
+                favcolors[i] = ShowColor();
+            }
+
+            Console.WriteLine("Your favorite colors:");
+
+            foreach (var color in favcolors)
+            {
+                Console.WriteLine(color);
+            }
+            
+            Console.ReadKey();
+
+        }
+    }    
 }
