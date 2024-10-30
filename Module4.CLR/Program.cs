@@ -2,9 +2,9 @@
 {
     internal class Program
     {
-        static string ShowColor()
+        static string ShowColor(string username)
         {
-            Console.WriteLine("Write u favorite color by small letter");
+            Console.WriteLine("{0} Write u favorite color by small letter", username);
 
             var color = Console.ReadLine();
 
@@ -70,14 +70,26 @@
 
         public static void Main(string[] args)
         {
-            GetArrayFromConsole();           
+            var (name, age) = ("Andrew", 25);
+
+            Console.WriteLine("My name is: {0}", name);
+            Console.WriteLine("My age is: {0}", age);
+
+            Console.Write("Enter name: ");
+            name = Console.ReadLine();
+            Console.Write("Enter age with numbers: ");
+            age = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Your name: {0}", name);
+            Console.WriteLine("Your age: {0}", age);
+            
 
             var favcolors = new string[3];
 
 
             for (int i = 0; i < favcolors.Length; i++)
             {
-                favcolors[i] = ShowColor();
+                favcolors[i] = ShowColor(name);
             }
 
             Console.WriteLine("Your favorite colors:");
@@ -90,5 +102,6 @@
             Console.ReadKey();
 
         }
+           
     }    
 }
