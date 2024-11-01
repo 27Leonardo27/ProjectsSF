@@ -2,9 +2,9 @@
 {
     internal class Program
     {
-        static string ShowColor(string username)
+        static string ShowColor(string username, int userage)
         {
-            Console.WriteLine("{0} Write u favorite color by small letter", username);
+            Console.WriteLine("{0}, {1}years \nWrite u favorite color by small letter", username, userage);
 
             var color = Console.ReadLine();
 
@@ -48,9 +48,9 @@
 
         }
 
-        static int[] GetArrayFromConsole()
+        static int[] GetArrayFromConsole(int num = 5)
         {
-            var result = new int[5];
+            var result = new int[num];
 
             for (int i = 0; i < result.Length; i++)
             {
@@ -58,38 +58,42 @@
                 result[i] = int.Parse(Console.ReadLine());
             }
 
-            Array.Sort(result);
+            return result;
+        }
 
-            foreach (var i in result)
+        static int[] SortArray(int[] array)
+        {
+            Array.Sort(array);
+
+            foreach (var i in array)
             {
                 Console.WriteLine(i);
             }
-
-            return result;
+            return array;
         }
 
         public static void Main(string[] args)
         {
             var (name, age) = ("Andrew", 25);
 
-            Console.WriteLine("My name is: {0}", name);
+            Console.WriteLine("My name is: {0}", name);            
             Console.WriteLine("My age is: {0}", age);
 
-            Console.Write("Enter name: ");
+            Console.Write("Enter name: ");          
             name = Console.ReadLine();
-            Console.Write("Enter age with numbers: ");
+            
+            Console.Write("Enter age with numbers: ");           
             age = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Your name: {0}", name);
+            Console.WriteLine("Your name: {0}", name);            
             Console.WriteLine("Your age: {0}", age);
             
 
             var favcolors = new string[3];
 
-
             for (int i = 0; i < favcolors.Length; i++)
             {
-                favcolors[i] = ShowColor(name);
+                favcolors[i] = ShowColor(name, age);
             }
 
             Console.WriteLine("Your favorite colors:");
@@ -98,10 +102,27 @@
             {
                 Console.WriteLine(color);
             }
-            
-            Console.ReadKey();
+
+            var array = GetArrayFromConsole(10);
+
+            ShowArray(array, true);
+
+              Console.ReadKey();
 
         }
-           
+
+        static void ShowArray(int[] array, bool sort = false)
+        {
+            if (sort)
+            {
+                SortArray(array);
+            }
+
+            foreach (var i in array)
+            {
+                Console.WriteLine(i);
+            }
+            
+        }
     }    
 }
