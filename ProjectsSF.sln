@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module3.CLR", "Module3.CLR\Module3.CLR.csproj", "{FF162BE5-AB08-4F69-8C72-9898A71B8CD1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Module3.CLR", "Module3.CLR\Module3.CLR.csproj", "{FF162BE5-AB08-4F69-8C72-9898A71B8CD1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module4.CLR", "Module4.CLR\Module4.CLR.csproj", "{459EB117-E2DC-481C-BE48-60C34CF658C5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module5.Final_Project", "Module5.Final_Project\Module5.Final_Project.csproj", "{095B4FE0-A7F3-450C-B11E-61A8472877D1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module6.OOP", "Module6.OOP\Module6.OOP.csproj", "{827AD21D-960D-40A5-8646-59935E6A600B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module7.OOP.Continue", "Module7.OOP.Continue\Module7.OOP.Continue.csproj", "{D598E82A-A352-4B77-8807-4FBC3B081786}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{827AD21D-960D-40A5-8646-59935E6A600B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{827AD21D-960D-40A5-8646-59935E6A600B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{827AD21D-960D-40A5-8646-59935E6A600B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D598E82A-A352-4B77-8807-4FBC3B081786}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D598E82A-A352-4B77-8807-4FBC3B081786}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D598E82A-A352-4B77-8807-4FBC3B081786}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D598E82A-A352-4B77-8807-4FBC3B081786}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

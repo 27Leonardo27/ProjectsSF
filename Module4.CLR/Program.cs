@@ -4,7 +4,7 @@
     {
         static string ShowColor(string username, int userage)
         {
-            Console.WriteLine("{0}, {1}years \nWrite u favorite color by small letter", username, userage);
+            Console.WriteLine("{0}, {1} years \nWrite u favorite color by small letter", username, userage);
 
             var color = Console.ReadLine();
 
@@ -45,10 +45,9 @@
             }
 
             return color;
-
         }
 
-        static int[] GetArrayFromConsole(int num = 5)
+        static int[] GetArrayFromConsole(ref int num)
         {
             var result = new int[num];
 
@@ -61,19 +60,35 @@
             return result;
         }
 
-        static int[] SortArray(int[] array)
+        static void SortArray(in int[] array, out int[] sorteddesc, out int[] sortedasc)
+        {
+            sortedasc = SortArrayAsc(array.ToArray());
+            sorteddesc = SortArrayDesc(array.ToArray());
+        }
+
+        static int[] SortArrayAsc(int[] array)
         {
             Array.Sort(array);
+            return array;
+        }
 
-            foreach (var i in array)
-            {
-                Console.WriteLine(i);
-            }
+        static int[] SortArrayDesc(int[] array)
+        {
+            Array.Sort(array);
+            Array.Reverse(array);
             return array;
         }
 
         public static void Main(string[] args)
         {
+            var Array = new int[] { 41, 69, 1488 };
+                
+            SortArray(Array, out var sorteddesc, out var sortedasc); 
+
+            var Myage = 12;
+            ChangeAge(ref Myage);
+            Console.WriteLine(Myage);
+
             var (name, age) = ("Andrew", 25);
 
             Console.WriteLine("My name is: {0}", name);            
@@ -103,19 +118,26 @@
                 Console.WriteLine(color);
             }
 
-            var array = GetArrayFromConsole(10);
+            var size = 6;
+
+            var array = GetArrayFromConsole(ref size);
 
             ShowArray(array, true);
 
               Console.ReadKey();
-
         }
 
+        static void ChangeAge(ref int age) 
+        {
+            Console.Write("Enter your age:");
+            age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(age);
+        }
         static void ShowArray(int[] array, bool sort = false)
         {
             if (sort)
             {
-                SortArray(array);
+                //SortArray(array);
             }
 
             foreach (var i in array)

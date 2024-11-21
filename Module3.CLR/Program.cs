@@ -7,6 +7,10 @@ namespace Module3.CLR
         static void Main(string[] args)
         {
 
+            int numb = 10;
+            numb &= 4;
+            Console.WriteLine(numb);
+
             Console.Write("Enter your name: ");
             var MyName = Console.ReadLine();
 
@@ -20,6 +24,9 @@ namespace Module3.CLR
             Console.WriteLine($"Your birthday is {birthday}");
 
             Console.ReadKey();
+      
+
+
         }
 
     }
