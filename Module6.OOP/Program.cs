@@ -161,3 +161,133 @@ class City
 {
     public string Name;
 }
+
+class Circle
+{
+    public double radius;
+
+    public double Square()
+    {
+
+    }
+
+    public double Length()
+    {
+
+    }
+}
+
+class Triangle
+{
+    public int a;
+    public int b;
+    public int c;
+
+    public double Square()
+    {
+
+    }
+
+    public double Perimeter()
+    {
+
+    }
+}
+
+class Square
+{
+    public int side;
+
+    public double Square()
+    {
+
+    }
+
+    public double Perimeter()
+    {
+
+    }
+}
+
+class TrafficLight
+{
+    private void ChangeColor(string color)
+    {
+
+    }
+    
+    public string GetColor()
+    {
+        var color = Console.ReadLine();
+        return color;
+    }
+}
+
+class User
+{
+    private string login;
+
+    public string Login
+    {
+        get
+        {
+            return login;
+        }
+
+        set
+        {
+            if (value.Length < 3)
+            {
+                Console.WriteLine("Логин должен быть длиной от 3 символов");
+            }
+            else
+            {
+                login = value;
+            }
+        }
+    }
+
+    private string email;
+
+    public string Email
+    {
+        get
+        {
+            return email;
+        }
+
+        set
+        {
+            if (!value.Contains('@'))
+            {
+                Console.WriteLine("Неверный формат адреса электронной почты");
+            }
+            else
+            {
+                email = value;
+            }
+        }
+    }
+
+    private int age;
+
+    public int Age
+    {
+        get
+        {
+            return age;
+        }
+
+        set
+        {
+            if (value < 18)
+            {
+                Console.WriteLine("Возраст должен быть не меньше 18");
+            }
+            else
+            {
+                age = value;
+            }
+        }
+    }
+}
