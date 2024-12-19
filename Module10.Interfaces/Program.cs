@@ -23,7 +23,9 @@
                     continue;
                 }
 
-                var calculator = new Calculator();
+                var logger = new ConsoleLogger();
+
+                var calculator = new Calculator(logger);
                 var result = calculator.Sum(a, b);
 
                 Console.WriteLine($"Результат: {result}");

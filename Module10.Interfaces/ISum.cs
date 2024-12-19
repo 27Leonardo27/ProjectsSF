@@ -14,8 +14,16 @@ namespace Module10.Interfaces
 
     class Calculator : ISum
     {
+        private ILogger logger;
+
+        public Calculator(ILogger logger)
+        {
+            this.logger = logger;
+        }
+
         public int Sum(int a, int b)
         {
+            logger.Log($"Выполнили сложение {a} и {b}");
             return a + b;
         }
     }
