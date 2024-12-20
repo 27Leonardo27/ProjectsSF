@@ -22,7 +22,7 @@ internal class Program
 
         Console.ReadKey();*/
     }
-  
+      
     static Department GetCurrentDepartment()
     {       
         var department = new Department();
