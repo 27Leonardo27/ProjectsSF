@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.Tracing;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 using System.Transactions;
 
 namespace Module14.Basics_LINQ_Part2
@@ -8,32 +9,53 @@ namespace Module14.Basics_LINQ_Part2
     {
         static void Main(string[] args)
         {
-            var listNumbers = new List<int>();
+            var phoneBook = new List<Contact>();
 
-            while (true)
+            // добавляем контакты
+            phoneBook.Add(new Contact("Игорь", 79990000001, "igor@example.com"));
+            phoneBook.Add(new Contact("Сергей", 79990000010, "serge@example.com"));
+            phoneBook.Add(new Contact("Анатолий", 79990000011, "anatoly@example.com"));
+            phoneBook.Add(new Contact("Валерий", 79990000012, "valera@example.com"));
+            phoneBook.Add(new Contact("Сергей", 799900000013, "serg@gmail.com"));
+            phoneBook.Add(new Contact("Иннокентий", 799900000013, "innokentii@example.com"));
+
+            var group = phoneBook.GroupBy(c => c.Mail.Split('@').Last());
+
+            foreach (var group1 in group)
             {
-                Console.WriteLine();
-                Console.Write("Введите число: ");
-
-                var input = Console.ReadLine();
-                var isInt = int.TryParse(input, out int isNums);
-
-                if (!isInt)
+                if (group1.Key.Contains("example"))
                 {
-                    Console.WriteLine("Вы ввели не число!");
-                    Console.WriteLine();
+                    Console.WriteLine("Fake: ");
+
+                    foreach (var cont in group1)
+                    {
+                        Console.WriteLine(cont.Name + " " + cont.Mail);
+                    }
                 }
                 else
                 {
-                    listNumbers.Add(isNums);
-                    Console.WriteLine($"Всего в списке - {listNumbers.Count}" +
-                         $"\nСумма всех чисел списка - {listNumbers.Sum()}" +
-                         $"\nНаименьшее число - {listNumbers.Min()}" +
-                         $"\nНаибольшее число - {listNumbers.Max()}" +
-                         $"\nСреднее значение всех чисел - {listNumbers.Average()}");
+                    Console.WriteLine();
+                    Console.WriteLine("Real: ");
+                    foreach(var cont in group1)
+                    {
+                        Console.WriteLine(cont.Name + " " + cont.Mail);
+                    }
                 }
             }
         }
-    } 
+    }
+
+    class Contact
+    {
+        public Contact(string name, long phone, string mail)
+        {
+            Name = name;
+            Phone = phone;
+            Mail = mail;
+        }
+
+        public string Name { get; set; }
+        public long Phone { get; set; }
+        public string Mail { get; set; }
+    }
 }
-    
