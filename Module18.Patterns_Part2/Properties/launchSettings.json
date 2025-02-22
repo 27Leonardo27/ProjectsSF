@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Module18.Patterns_Part2": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "SLAVA_UKRAINI": "1"
+      }
+    }
+  }
+}
