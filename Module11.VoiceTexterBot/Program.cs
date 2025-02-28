@@ -52,7 +52,7 @@ namespace Module11.VoiceTexterBot
             return new AppSettings()
             {
                 DownloadsFolder = "C:\\Users\\12dol\\Downloads",
-                BotToken = "8022740031:AAFZmXvUOw-MIH73BsvurJVfr6HStRQr29M",
+                BotToken = "",
                 AudioFileName = "audio",
                 InputAudioFormat = "ogg",
                 OutputAudioFormat = "wav", 
