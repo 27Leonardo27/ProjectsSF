@@ -20,6 +20,7 @@ namespace SocialNetwork.PLL.Views
             Console.WriteLine("Ссылка на моё фото: {0}", user.Photo);
             Console.WriteLine("Мой любимый фильм: {0}", user.FavoriteMovie);
             Console.WriteLine("Моя любимая книга: {0}", user.FavoriteBook);
+            Console.WriteLine("Мои друзья: {0}", user.Friends);
         }
     }
 }
