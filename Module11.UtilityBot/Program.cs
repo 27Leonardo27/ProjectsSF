@@ -28,7 +28,7 @@ namespace Module11.UtilityBot
         static void ConfigureServices(IServiceCollection services)
         {
             // Регистрируем объект TelegramBotClient c токеном подключения
-            services.AddSingleton<ITelegramBotClient>(provider => new TelegramBotClient("7764363629:AAFalMwhbzf5BxYmD24zaRKrPuFQ2HJ6rpA"));
+            services.AddSingleton<ITelegramBotClient>(provider => new TelegramBotClient(""));
             // Регистрируем постоянно активный сервис бота
             services.AddSingleton<TextMessageController>();
             services.AddSingleton<IStorage, MemoryStorage>();
